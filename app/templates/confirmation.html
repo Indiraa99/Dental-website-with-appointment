@@ -1,0 +1,47 @@
+<!-- app/templates/confirmation.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-FTlK67w7h7Ujm9d9Lwq4lTTcAAeRzHpKtJtq8Wl9Df4vD1sC+X4N38U6vfIfniYtMVPYwxMj02nys8e+6wGdQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add this in the head of your HTML file -->
+    <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+    <!-- Add this in the head of your HTML file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <div class="container-fluid text-center py-5 animate__animated animate__fadeIn" style="background-color: #05472A; color: #fff;">
+            <div class="jumbotron">
+                <h1>YOUR APPOINTMENT CONFIRMED!</h1>
+            </div>
+    </div>
+    <p>Thank you for booking an appointment with us. Here are your details:</p>
+
+    <ul>
+        <li><strong>Name:</strong> {{ appointment.name }}</li>
+        <li><strong>Email:</strong> {{ appointment.email }}</li>
+        <li><strong>Phone:</strong> {{ appointment.phone }}</li>
+        <li><strong>Date:</strong> {{ appointment.date }}</li>
+        <li><strong>Time:</strong> {{ appointment.time }}</li>
+        <li><strong>Chief Complaint:</strong> {{ appointment.chief_complaint}}</li>
+    </ul>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fas fa-tooth fa-3x mb-3 text-primary"></i>
+                <h4>Our team will reach out to you before the appointment date.</h4>
+            </div>
+            
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}">Go Back to Home Page</a>
+
+</body>
+</html>

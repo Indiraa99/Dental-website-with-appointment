@@ -1,0 +1,57 @@
+/* app/static/css/style.css */
+
+/* General styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #89CFF0;
+    color: #333;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Form styling */
+.form-control {
+    border: 1px solid #ced4da;
+}
+
+/* Container styling */
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    background-color: #0000FF;
+    border-color: #0000FF;
+}
+
+/* Link hover effect */
+a:hover {
+    color: #0056b3;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-in-out;
+}

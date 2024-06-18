@@ -1,0 +1,142 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-FTlK67w7h7Ujm9d9Lwq4lTTcAAeRzHpKtJtq8Wl9Df4vD1sC+X4N38U6vfIfniYtMVPYwxMj02nys8e+6wGdQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add this in the head of your HTML file -->
+    <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+    <!-- Add this in the head of your HTML file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Dental Care</title>
+
+    <style>
+        /* Add this to your head or your CSS file */
+        button[type="submit"] {
+            background-color: #0000FF; /* Set the background color */
+            color: #fff; /* Set the text color */
+            padding: 10px 20px; /* Add padding for better appearance */
+            border: none; /* Remove the default button border */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            cursor: pointer; /* Add a pointer cursor on hover */
+            transition: background-color 0.3s; /* Add a smooth transition effect */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ADD8E6; /* Change the background color on hover */
+        }
+    </style>
+</head>
+<body>
+     <header class="header">
+     
+        <div class="container-fluid text-center py-5 animate__animated animate__fadeIn" style="background-color: #5097A4; color: #fff;">
+            <div class="jumbotron">
+                <h1 class="display-4">DIGIT-O-DENTAL ...your one stop smile solution</h1>
+            </div>
+        </div>
+     </header>
+
+    <section class="about-section mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>ABOUT US</h2>
+                    <p class="lead" style="background-color: #598BAF; color: #fff;">WELCOME TO DIGIT-O-DENTAL CLINIC, A LEADING FAMILY DENTAL CARE PRACTICE.WE UNDERSTAND THE IMPORTANCE OF CARING FOR YOUR TEETH AND GUMS,AND WE ARE COMMITTED TO PROVIDING YOU WITH A PEACEFUL AND PLEASANT DENTAL EXPERIENCE.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/main.jpg') }}" alt="Dental Image" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container text-center mt-5">
+        <h2 class="text-primary">OUR SERVICES - Your smile in safe hands! </h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fas fa-tooth fa-3x mb-3 text-primary"></i>
+                <h4>COSMETIC DENTISTRY</h4>
+                <p>Creating the appearance of natural beauty requires a keen eye and attention to small details. Partnering with the best labs has enabled us to transform smiles beautifully and naturally for years.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-toothbrush fa-3x mb-3 text-primary"></i>
+                <h4>GENERAL DENTISTRY</h4>
+                <p>We offer a full range of services for your whole family. You can feel confident that eDENT Dental will meet all your dental needs. We are excited to have your family join ours!</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-smile fa-3x mb-3 text-primary"></i>
+                <h4>RESTORATIVE DENTISTRY</h4>
+                <p>We rely on the most trusted technologies while looking to the future. Our office is outfitted with the latest technologies from digital X-rays, to 3D scanning to make your visit as easy and painless as possible, while also keeping the environment and your comfort in mind!</p>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-primary">TOOTH PAIN? BOOK YOUR APPOINTMENT NOW!</h2>
+    
+    <form method="post" action="{{ url_for('booking') }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <label for="chiefComplaint">Chief Complaint:</label><br>
+        <textarea type="complaint" id="chiefComplaint" name="chiefComplaint" rows='10' cols='50'required></textarea> <br>
+        
+        <button type="submit">Submit</button>  
+    </form>
+
+
+    
+
+    <section class="additional-info-section mt-5">
+        <div class="container">
+            <h2 class="text-center mb-4">IT'S A BEAUTIFUL DAY TO SAVE YOUR TEETH!</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-item">
+                        <h3>GOT SOME QUESTIONS? CONTACT US HERE!</h3>
+                        <p>For any Dental Queries, Call us at <strong>(123) 456-7890</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+      <section class="image-gallery-section mt-5">
+        <div class="container">
+            <h2 class="text-center mb-4"> OUR CLINIC </h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='images/images.jpeg') }}" alt="Gallery Image 1" class="img-fluid rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='images/next.jpeg') }}" alt="Gallery Image 2" class="img-fluid rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='images/clinic.jpeg') }}" alt="Gallery Image 3" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- app/templates/index.html -->
+
+
+    
+
+  
+    
